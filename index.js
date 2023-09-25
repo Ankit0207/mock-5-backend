@@ -2,8 +2,10 @@ const express = require("express");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/userRoutes");
 const { employeeRouter } = require("./routes/employeeRoutes");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 
 app.use("/", userRouter);
